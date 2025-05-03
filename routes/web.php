@@ -16,12 +16,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('master');
+    return view('content.chart.dashboard');
 });
 
 Route::get('/product', [ProductController::class, 'tableProduct']);
 
-// Route::get('/transaction', [TransactionController::class, 'tableTransaction']);
 Route::get('/transaction/formIn', [TransactionController::class, 'formInTransaction']);
 Route::get('/transaction/formOut', [TransactionController::class, 'formOutTransaction']);
 Route::get('/transaction/tableIn', [TransactionController::class, 'tableInTransaction']);

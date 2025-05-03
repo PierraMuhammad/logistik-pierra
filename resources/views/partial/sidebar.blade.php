@@ -2,8 +2,9 @@
     <div class="sidebar-logo">
         <!-- Logo Header -->
         <div class="logo-header" data-background-color="dark">
-            <a href="/" class="logo">
-                <img src="{{asset('assets/img/kaiadmin/logo_light.svg')}}" alt="navbar brand" class="navbar-brand" height="20" />
+            <a href="/" class="logo text-white">
+                {{-- <img src="{{asset('assets/img/kaiadmin/logo_light.svg')}}" alt="navbar brand" class="navbar-brand" height="20" /> --}}
+                Logistik Tripasysfo
             </a>
             <div class="nav-toggle">
                 <button class="btn btn-toggle toggle-sidebar">
@@ -23,7 +24,7 @@
         <div class="sidebar-content">
             <ul class="nav nav-secondary">
                 <li class="nav-item active" id="dashboard">
-                    <a class="collapsed" aria-expanded="false">
+                    <a class="collapsed" aria-expanded="false" href="/">
                         <i class="fas fa-home"></i>
                         <p>Dashboard</p>
                     </a>
