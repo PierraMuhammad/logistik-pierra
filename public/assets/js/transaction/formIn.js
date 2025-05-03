@@ -100,7 +100,7 @@
                 , 'origin': origin
             }
             , success: function(res) {
-                window.location.href = "http://localhost:8000/transaction"
+                window.location.href = "http://localhost:8000/"
             }
         })
     }
@@ -126,7 +126,7 @@
                 , 'origin': origin
             , }
             , success: function(res) {
-                window.location.href = "http://localhost:8000/transaction"
+                window.location.href = "http://localhost:8000/"
             }
         })
     }

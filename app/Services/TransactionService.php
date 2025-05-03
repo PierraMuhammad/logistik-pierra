@@ -115,9 +115,11 @@ class TransactionService
             }
 
             if ($plusminus == "+") {
+                $request['old_quantity'] = $request['quantity'];
                 $request['quantity'] = $product['product_quantity'] + $request['quantity'];
                 $request['status'] = true;
             } else {
+                $request['old_quantity'] = $request['quantity'];
                 $request['quantity'] = $product['product_quantity'] - $request['quantity'];
                 $request['status'] = false;
             }
@@ -136,6 +138,7 @@ class TransactionService
 
             $request['id'] = Str::random(32); // id transaction
             $request['status_id'] = 'TP' . sprintf('%03d', $count);
+            $request['quantity'] = $request['old_quantity'];
             $request['created_at'] = now();
             $request['updated_at'] = now();
 
@@ -175,7 +178,7 @@ class TransactionService
             $request['id'] = Str::random(32); // id transaction
             $request['status'] = false; // in = 1, out = 0
             $request['status_id'] = 'TP' . sprintf('%03d', $count);
-            $request['product_code'] = $product['product_code'];
+            $request['code'] = $product['product_code'];
             $request['created_at'] = now();
             $request['updated_at'] = now();
 

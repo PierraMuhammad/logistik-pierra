@@ -10,7 +10,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title">Time - Product Chart</div>
+                    <div class="card-title">Time - Transaction Chart (Many Transaction in a day)</div>
                 </div>
                 <div class="card-body">
                     <div class="chart-container">

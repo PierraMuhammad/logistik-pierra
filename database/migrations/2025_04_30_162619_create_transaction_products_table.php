@@ -16,6 +16,7 @@ return new class extends Migration
             $table->boolean('tp_status');
             $table->string('tp_status_id');
             $table->integer('tp_quantity');
+            $table->string('tp_product_code');
             $table->string('tp_storage_location');
             $table->timestamps();
         });
