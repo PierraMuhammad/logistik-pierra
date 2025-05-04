@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('content.chart.dashboard');
+    return view('content.dashboard.dashboard');
 });
 
 Route::get('/product', [ProductController::class, 'tableProduct']);

@@ -42,78 +42,12 @@
 
 @push('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/js/selectize.min.js" integrity="sha512-IOebNkvA/HZjMM7MxL0NYeLYEalloZ8ckak+NDtOViP7oiYzG5vn6WVXyrJDiJPhl4yRdmNAG49iuLmhkUdVsQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="{{asset('assets/js/transaction/formOut.js')}}"></script>
 <script>
     $('.nav-item').removeClass('active')
     $('#transaction-page').addClass('active')
 
-    let products = []
-
-    getData = () => {
-        $.ajax({
-            type: "GET"
-            , url: "http://localhost:8000/api/products"
-            , data: {
-                "_token": "{{ csrf_token() }}"
-            }
-            , success: function(res) {
-                products = res.data
-                res.data.map((item, key) => {
-                    $('#select-state').append(`
-                    <option value="${item.product_id}">${item.product_code} - ${item.product_name}; quantity : ${item.product_quantity}</option>
-                `)
-                })
-                $('select').selectize({
-                    sortField: 'text'
-                });
-            }
-        })
-    }
-
     getData()
-
-    getProduct = (id) => {
-        let selectedProduct = false
-
-        products.map((item) => {
-            if (item.product_id == id) {
-                selectedProduct = item
-            }
-        })
-
-        return selectedProduct
-    }
-
-    submitProduct = () => {
-        let id = $('#select-state').val()
-        let quantity = $('#quantity').val()
-        let origin = $('#origin').val().toLowerCase()
-        console.log(id, quantity, origin)
-
-        let product = getProduct(id)
-        if (!product) {
-            return false
-        }
-
-        $('#product-message-quantity').text('')
-        if (product.product_quantity - quantity < 0) {
-            $('#product-message-quantity').text('product quantity can not be lower than 0')
-            return false
-        }
-
-        $.ajax({
-            type: "POST"
-            , url: "http://localhost:8000/api/transactions/formOut"
-            , data: {
-                "_token": "{{ csrf_token() }}"
-                , "id": id
-                , "quantity": quantity
-                , 'origin': origin
-            , }
-            , success: function(res) {
-                window.location.href = "http://localhost:8000/"
-            }
-        })
-    }
 
 </script>
 @endpush
