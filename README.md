@@ -11,11 +11,13 @@ php artisan key:generate
 composer install
 ```
 
-Impor DB dari file .sql
-
 Ganti nama DB
 ```
 DB_DATABASE=db_logistik_pierra
+```
+lakukan perintah
+```
+php artisan migrate
 ```
 
 nyalakan XAMPP dan coba jalankan web
@@ -27,4 +29,4 @@ php artisan serve
 - Pencatatan Product Masuk
 - Pencatatan Product Keluar
 - Menampilkan Data Product pada Gudang
-- 
+- Statistik Transaction Product
