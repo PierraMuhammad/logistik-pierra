@@ -13,6 +13,7 @@ class Storage extends Model
 
     protected $fillable = [
         'storage_id',
+        'storage_code',
         'storage_location',
     ];
 }

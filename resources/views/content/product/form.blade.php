@@ -41,19 +41,19 @@
             $('.card-body').append(`
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="product name" name="name">
+                    <input type="text" class="form-control" id="name" placeholder="product name" name="name" required>
                 </div>
                 <div class="form-group">
                     <label for="name">Code</label>
-                    <input type="text" class="form-control" id="code" placeholder="product code" name="code">
+                    <input type="text" class="form-control" id="code" placeholder="product code" name="code" required>
                 </div>
                 <div class="form-group">
                     <label for="quantity">Quantity</label>
-                    <input type="number" class="form-control" id="quantity" placeholder="product quantity" name="quantity">
+                    <input type="number" class="form-control" id="quantity" placeholder="product quantity" name="quantity" required>
                 </div>
                 <div class="form-group">
                     <label for="name">Origin</label>
-                    <input type="text" class="form-control" id="origin" placeholder="product origin" name="origin">
+                    <input type="text" class="form-control" id="origin" placeholder="product origin" name="origin" required>
                 </div>
 
                 <button class="btn btn-primary ms-2" onclick="submitNewProduct()">Submit</button>
@@ -148,13 +148,6 @@
         if (!product) {
             return false
         }
-
-        // khusus check out barang
-        // $('#product-message-quantity').text('')
-        // if (product.product_quantity - quantity < 0) {
-        //     $('#product-message-quantity').text('product quantity can not be 0')
-        //     return false
-        // }
 
         $.ajax({
             type: "PUT"

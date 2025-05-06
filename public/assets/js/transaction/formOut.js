@@ -37,7 +37,15 @@ submitProduct = () => {
     let id = $('#select-state').val()
     let quantity = $('#quantity').val()
     let origin = $('#origin').val().toLowerCase()
-    console.log(id, quantity, origin)
+    
+    if (quantity == 0) {
+        $(`#product-message-quantity`).append('quantity can not be empty')
+        return false
+    }
+    if (origin == "") {
+        $(`#product-message-origin`).append('origin can not be empty')
+        return false
+    }
 
     let product = getProduct(id)
     if (!product) {

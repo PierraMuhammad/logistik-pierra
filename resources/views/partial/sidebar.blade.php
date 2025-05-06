@@ -3,8 +3,7 @@
         <!-- Logo Header -->
         <div class="logo-header" data-background-color="dark">
             <a href="/" class="logo text-white">
-                {{-- <img src="{{asset('assets/img/kaiadmin/logo_light.svg')}}" alt="navbar brand" class="navbar-brand" height="20" /> --}}
-                Logistik Tripasysfo
+                Logistic System
             </a>
             <div class="nav-toggle">
                 <button class="btn btn-toggle toggle-sidebar">
@@ -61,7 +60,12 @@
                             </li>
                         </ul>
                     </div>
-
+                </li>
+                <li class="nav-item" id="storage-page">
+                    <a href="/storage">
+                        <i class="fas fa-boxes"></i>
+                        <p>Storage</p>
+                    </a>
                 </li>
             </ul>
         </div>

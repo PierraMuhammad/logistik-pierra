@@ -9,7 +9,7 @@ class ProductRepository
 {
     public function getAllProducts()
     {
-        return Product::get();
+        return Product::orderBy('product_code')->get();
     }
 
     public function findProductById(string $id)

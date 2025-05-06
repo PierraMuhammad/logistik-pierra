@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StorageController;
 use App\Http\Controllers\TransactionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -31,3 +32,9 @@ Route::post('/transactions/tableIn', [TransactionController::class, 'getTransact
 Route::post('/transactions/tableOut', [TransactionController::class, 'getTransactionOut']);
 Route::post('/transactions/formIn', [TransactionController::class, 'checkInProduct']);
 Route::post('/transactions/formOut', [TransactionController::class, 'checkOutProduct']);
+
+Route::post('/storages', [StorageController::class, 'get']);
+Route::post('/storages/find', [StorageController::class, 'findById']);
+Route::post('/storages/create', [StorageController::class, 'create']);
+Route::post('/storages/update', [StorageController::class, 'update']);
+Route::post('/storages/delete', [StorageController::class, 'delete']);

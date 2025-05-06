@@ -9,7 +9,7 @@ class StorageRepository
 {
     public function getAllStorage()
     {
-        return Storage::get();
+        return Storage::orderBy('storage_code')->get();
     }
 
     public function findStorageById(string $id)
@@ -26,6 +26,7 @@ class StorageRepository
     {
         return Storage::create([
             'storage_id' => $request['id'],
+            'storage_code' => $request['code'],
             'storage_location' => $request['name']
         ]);
     }

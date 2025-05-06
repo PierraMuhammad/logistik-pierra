@@ -6,23 +6,31 @@ getCheckValue = () => {
         $('.card-body').append(`
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="product name" name="name">
+                <input type="text" class="form-control" id="name" placeholder="product name" name="name" required>
+                <small id="product-message-name" class="text-danger"></small>
             </div>
             <div class="form-group">
                 <label for="name">Code</label>
-                <input type="text" class="form-control" id="code" placeholder="product code" name="code">
+                <input type="text" class="form-control" id="code" placeholder="product code" name="code" required>
+                <small id="product-message-code" class="text-danger"></small>
             </div>
             <div class="form-group">
                 <label for="quantity">Quantity</label>
-                <input type="number" class="form-control" id="quantity" placeholder="product quantity" name="quantity">
+                <input type="number" class="form-control" id="quantity" placeholder="product quantity" name="quantity" required>
+                <small id="product-message-quantity" class="text-danger"></small>
             </div>
             <div class="form-group">
                 <label for="name">Origin</label>
-                <input type="text" class="form-control" id="origin" placeholder="product origin" name="origin">
+                <input type="text" class="form-control" id="origin" placeholder="product origin" name="origin" required>
+                <small id="product-message-origin" class="text-danger"></small>
             </div>
 
             <button class="btn btn-primary ms-2" onclick="submitNewProduct()">Submit</button>
         `)
+        let  lastIndexProduct = products[products.length - 1]
+        $('#product-message-code').append(`
+                last product code : ${lastIndexProduct.product_code}
+            `)
     } else {
         $('.card-body').html('')
         $('.card-body').append(`
@@ -34,12 +42,13 @@ getCheckValue = () => {
             </div>
             <div class="form-group">
                 <label for="quantity">Quantity</label>
-                <input type="number" class="form-control" id="quantity" placeholder="product quantity" name="quantity">
-                <small id="product-message-quantity"></small>
+                <input type="number" class="form-control" id="quantity" placeholder="product quantity" name="quantity" required>
+                <small id="product-message-quantity" class="text-danger"></small>
             </div>
             <div class="form-group">
                 <label for="name">Origin</label>
-                <input type="text" class="form-control" id="origin" placeholder="product origin" name="origin">
+                <input type="text" class="form-control" id="origin" placeholder="product origin" name="origin" required>
+                <small id="product-message-origin" class="text-danger"></small>
             </div>
 
             <button class="btn btn-primary ms-2 mt-2" onclick="updateProduct()">Submit</button>
@@ -87,6 +96,23 @@ submitNewProduct = () => {
     let quantity = $('#quantity').val()
     let origin = $('#origin').val().toLowerCase()
 
+    if (name == "") {
+        $(`#product-message-name`).append('name can not be empty')
+        return false
+    }
+    if (code == "") {
+        $(`#product-message-code`).append('code can not be empty')
+        return false
+    }
+    if (quantity == 0) {
+        $(`#product-message-quantity`).append('quantity can not be empty')
+        return false
+    }
+    if (origin == "") {
+        $(`#product-message-origin`).append('origin can not be empty')
+        return false
+    }
+
     $.ajax({
         type: "POST"
         , url: "http://127.0.0.1:8000/api/transactions/formIn"
@@ -107,7 +133,15 @@ updateProduct = () => {
     let id = $('#select-state').val()
     let quantity = $('#quantity').val()
     let origin = $('#origin').val().toLowerCase()
-    console.log(id, quantity, origin)
+
+    if (quantity == 0) {
+        $(`#product-message-quantity`).append('quantity can not be empty')
+        return false
+    }
+    if (origin == "") {
+        $(`#product-message-origin`).append('origin can not be empty')
+        return false
+    }
 
     let product = getProduct(id)
     if (!product) {

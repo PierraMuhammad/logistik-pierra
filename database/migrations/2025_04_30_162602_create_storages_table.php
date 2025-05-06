@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('storages', function (Blueprint $table) {
             $table->string('storage_id')->primary();
-            $table->string('storage_location')->unique();
+            $table->string('storage_code')->unique();
+            $table->string('storage_location');
         });
     }
 

@@ -25,12 +25,13 @@
                 </div>
                 <div class="form-group">
                     <label for="quantity">Quantity</label>
-                    <input type="number" class="form-control" id="quantity" placeholder="product quantity" name="quantity">
+                    <input type="number" class="form-control" id="quantity" placeholder="product quantity" name="quantity" required>
                     <small id="product-message-quantity" class="text-danger"></small>
                 </div>
                 <div class="form-group">
-                    <label for="name">Destination</label>
-                    <input type="text" class="form-control" id="origin" placeholder="product origin" name="origin">
+                    <label for="origin">Destination</label>
+                    <input type="text" class="form-control" id="origin" placeholder="product origin" name="origin" required>
+                    <small id="product-message-origin" class="text-danger"></small>
                 </div>
 
                 <button class="btn btn-primary ms-2 mt-2" onclick="submitProduct()">Submit</button>

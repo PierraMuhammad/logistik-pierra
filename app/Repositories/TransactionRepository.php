@@ -9,7 +9,7 @@ class TransactionRepository
 {
     public function getAllTransaction()
     {
-        return Transaction::get();
+        return Transaction::orderBy('tp_status_id')->get();
     }
 
     public function getTransactionIn()
