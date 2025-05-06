@@ -27,7 +27,6 @@
                                             <th class="sorting_asc" tabindex="0" aria-controls="basic-datatables" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 40%">Name</th>
                                             <th class="sorting" tabindex="0" aria-controls="basic-datatables" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 22.5%">code</th>
                                             <th class="sorting" tabindex="0" aria-controls="basic-datatables" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 22.5%">quantity</th>
-                                            {{-- <th class="sorting" tabindex="0" aria-controls="basic-datatables" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 15%">action</th> --}}
                                         </tr>
                                     </thead>
                                     <tbody id="product-table-body">
@@ -45,7 +44,7 @@
 @endsection
 
 @push('script')
-<script src="{{asset('../assets/js/product/table.js')}}"></script>
+<script src="{{asset('assets/js/product/table.js')}}"></script>
 <script>
     $('.nav-item').removeClass('active')
     $('#product-page').addClass('active')

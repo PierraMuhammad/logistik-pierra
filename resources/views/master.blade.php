@@ -7,7 +7,7 @@
     <link rel="icon" href="{{asset('assets/img/kaiadmin/favicon.ico')}}" type="image/x-icon" />
 
     <!-- Fonts and icons -->
-    <script src="{{asset('')}}assets/js/plugin/webfont/webfont.min.js"></script>
+    <script src="{{asset('assets/js/plugin/webfont/webfont.min.js')}}"></script>
     <script>
         WebFont.load({
             google: {
@@ -20,7 +20,7 @@
                     , "Font Awesome 5 Brands"
                     , "simple-line-icons"
                 , ]
-                , urls: ["assets/css/fonts.min.css"]
+                , urls: ["{{asset('assets/css/fonts.min.css')}}"]
             , }
             , active: function() {
                 sessionStorage.fonts = true;
