@@ -10,16 +10,16 @@ getData = () => {
                 if (key % 2 == 0) {
                     $('#product-table-body').append(`
                         <tr role="row" class="even">
-                            <td class="sorting_1">${item.product_name}</td>
-                            <td>${item.product_code}</td>
+                            <td class="sorting_1">${item.product_code}</td>
+                            <td>${item.product_name}</td>
                             <td>${item.product_quantity} pieces</td>
                         </tr>
                     `)
                 } else {
                     $('#product-table-body').append(`
                         <tr role="row" class="odd">
-                            <td class="sorting_1">${item.product_name}</td>
-                            <td>${item.product_code}</td>
+                            <td class="sorting_1">${item.product_code}</td>
+                            <td>${item.product_name}</td>
                             <td>${item.product_quantity} pieces</td>
                         </tr>
                     `)

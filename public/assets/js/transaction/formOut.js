@@ -54,7 +54,7 @@ submitProduct = () => {
 
     $('#product-message-quantity').text('')
     if (product.product_quantity - quantity < 0) {
-        $('#product-message-quantity').text('product quantity can not be lower than 0')
+        $('#product-message-quantity').text('product out can not more than product quantity')
         return false
     }
 

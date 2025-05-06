@@ -42,6 +42,7 @@ getData = () => {
             } else {
                 $("#basic-datatables").DataTable({});
             }
+            createMultipleLineChart(res.data)
         }
     })
 }

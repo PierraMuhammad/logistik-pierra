@@ -76,14 +76,13 @@
 
 @push('script')
 <script src="{{asset('assets/js/helper/helper.js')}}"></script>
-<script src="{{asset('assets/js/transaction/table.js')}}"></script>
 <script src="{{asset('assets/js/dashboard/chart.js')}}"></script>
+<script src="{{asset('assets/js/dashboard/table.js')}}"></script>
 <script>
     $('.nav-item').removeClass('active')
-    $('#transaction-page').addClass('active')
+    $('#dashboard').addClass('active')
 
     getData()
-    createMultipleLineChart()
 
 </script>
 @endpush
